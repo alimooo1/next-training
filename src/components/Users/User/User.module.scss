@@ -1,0 +1,57 @@
+@import "../../../styles/mixins.scss";
+
+.Card {
+  width: 300px;
+  height: 400px;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(161, 81, 168),
+    rgb(102, 102, 167)
+  );
+  box-shadow: rgba(0, 0, 0, 0.403) 0px 3px 8px;
+  color: white;
+  @include main-font(700, 1rem);
+
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  span {
+    @include main-font(400, 1rem);
+  }
+
+  .EmailAddress {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  img {
+    border-radius: 100%;
+    margin-bottom: 30px;
+  }
+
+  button {
+    width: 100%;
+    border-radius: 10px;
+    height: 50px;
+    @include main-font(700, 1rem);
+    border: none;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px;
+      cursor: pointer;
+    }
+  }
+}

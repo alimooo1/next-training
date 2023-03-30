@@ -1,0 +1,17 @@
+@import "../../styles/mixins.scss";
+
+.Users {
+  min-height: 100vh;
+  padding: 50px 150px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  background-color: rgb(226, 178, 231);
+
+  .loading {
+    @include main-font(400, 3rem);
+    color: white;
+  }
+}

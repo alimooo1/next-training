@@ -1,0 +1,39 @@
+@import "../../../mixins.scss";
+
+.singleUser {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .Card {
+    width: 350px;
+    height: 500px;
+    padding: 20px 20px;
+    @include main-font(700, 25px);
+  }
+
+  div {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  span {
+    @include main-font(300, 25px);
+  }
+
+  button {
+    display: none;
+  }
+
+  img {
+    width: 150px;
+    border-radius: 40px;
+    margin-bottom: 50px;
+  }
+
+  .loading {
+    @include main-font(400, 3rem);
+    color: white;
+  }
+}

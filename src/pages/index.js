@@ -1,7 +1,9 @@
+import Users from "@/components/Users/Users";
+
 function Home() {
   return (
     <>
-      <div>Hello</div>
+      <Users />
     </>
   );
 }
