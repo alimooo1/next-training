@@ -1,30 +1,34 @@
 import React, { useState, useEffect } from "react";
-// import { useParams } from 'react-router-dom'
 import User from "../User/User";
 import styles from "./singleUser.module.scss";
 import { useRouter } from "next/router";
 
 export default function SingleUser() {
-  // const { userID } = useParams();
-  const router = useRouter();
   const [user, setUser] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
+  const router = useRouter();
+  console.log(router);
 
   async function getData() {
-    const data = await fetch(`https://reqres.in/api/users/${router.query}`);
+    const { userID } = router.query;
+    console.log(userID);
+    const data = await fetch(`https://reqres.in/api/users/${userID}`);
     const result = await data.json();
     const user = result.data;
     return user;
   }
 
+  const result = async () => {
+    const user = await getData();
+    setUser(user);
+    setIsLoaded(true);
+  };
+
   useEffect(() => {
-    const result = async () => {
-      const user = await getData();
-      setUser(user);
-      setIsLoaded(true);
-    };
-    result();
-  }, []);
+    if (router.isReady) {
+      result();
+    }
+  }, [router.isReady]);
 
   return (
     <div className={styles.singleUser}>
