@@ -38,9 +38,10 @@ export default function SingleUser() {
           lastName={user.last_name}
           email={user.email}
           avatar={user.avatar}
+          single
         />
       ) : (
-        <div className="loading">is loading...</div>
+        <div className={styles.loading}>is loading...</div>
       )}
     </div>
   );

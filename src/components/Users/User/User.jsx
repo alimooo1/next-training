@@ -7,9 +7,10 @@ export default function User({
   email,
   avatar,
   clickHandler,
+  single,
 }) {
   return (
-    <div className={styles.Card}>
+    <div className={`${styles.Card} ${single ? styles.single : ""}`}>
       <img src={avatar} alt="" />
       <div className={styles.firstName}>
         <span>FirstName: </span>
