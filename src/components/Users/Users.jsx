@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-// import { useNavigate } from 'react-router-dom'
+import { useRouter } from "next/router";
 import User from "./User/User";
 import styles from "./Users.module.scss";
 
 export default function Users() {
   const [users, setUsers] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-  // const navigate = useNavigate();
+  const router = useRouter();
 
-  // const clickHandler = (ID) => {
-  //   navigate(`/${ID}`)
-  // }
+  const clickHandler = (ID) => {
+    router.push(`/${ID}`);
+  };
 
   async function getData() {
     const data = await fetch("https://reqres.in/api/users");
