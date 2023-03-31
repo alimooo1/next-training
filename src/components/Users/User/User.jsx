@@ -20,7 +20,7 @@ export default function User({
         <span>LastName: </span>
         {lastName}
       </div>
-      <div className={styles.emailAddress}>
+      <div className={styles.EmailAddress}>
         <span className={styles.email}>Email: </span>
         {email}
       </div>

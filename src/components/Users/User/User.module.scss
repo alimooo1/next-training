@@ -43,11 +43,11 @@
     width: 100%;
     border-radius: 10px;
     height: 50px;
-    @include main-font(700, 1rem);
     border: none;
     outline: none;
     background-color: rgb(255, 255, 255);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    @include main-font(700, 1rem);
 
     &:hover {
       box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px;
@@ -79,10 +79,5 @@
     width: 150px;
     border-radius: 40px;
     margin-bottom: 50px;
-  }
-
-  .loading {
-    @include main-font(400, 3rem);
-    color: white;
   }
 }
