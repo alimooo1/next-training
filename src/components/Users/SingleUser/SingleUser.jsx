@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React, { useState, useEffect } from "react";
 import User from "../User/User";
 import styles from "./singleUser.module.scss";
@@ -13,6 +14,11 @@ export default function SingleUser({ fetchedData }) {
 
   return (
     <div className={styles.singleUser}>
+      <Head>
+        <title>
+          {user.first_name} {user.last_name}
+        </title>
+      </Head>
       {isLoaded ? (
         <User
           firstName={user.first_name}
