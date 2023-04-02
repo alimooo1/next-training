@@ -1,9 +1,9 @@
 import SingleUser from "@/components/Users/SingleUser/SingleUser";
 
-function index() {
+function index({ userData }) {
   return (
     <>
-      <SingleUser />
+      <SingleUser fetchedData={userData} />
     </>
   );
 }
@@ -15,7 +15,6 @@ export async function getStaticProps(context) {
   const data = await fetch(`https://reqres.in/api/users/${params.userID}`);
   const result = await data.json();
   const user = result.data;
-  console.log(user);
 
   return {
     props: {
