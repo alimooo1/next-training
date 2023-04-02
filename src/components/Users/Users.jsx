@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import User from "./User/User";
 import styles from "./Users.module.scss";
 
-export default function Users() {
+export default function Users({ fetchedData }) {
   const [users, setUsers] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const router = useRouter();
@@ -12,10 +12,8 @@ export default function Users() {
     router.push(`/${ID}`);
   };
 
-  async function getData() {
-    const data = await fetch("https://reqres.in/api/users");
-    const result = await data.json();
-    let users = result.data.map((item) => {
+  function getData(data) {
+    let users = data.map((item) => {
       return (
         <User
           firstName={item.first_name}
@@ -27,15 +25,12 @@ export default function Users() {
         />
       );
     });
-    return await users;
+    return users;
   }
 
   useEffect(() => {
-    const result = async () => {
-      setUsers(await getData());
-      setIsLoaded(true);
-    };
-    result();
+    setUsers(getData(fetchedData));
+    setIsLoaded(true);
   }, []);
 
   return (
