@@ -5,11 +5,11 @@ https://user-images.githubusercontent.com/124451160/232181432-eee204e8-0408-4080
 
 ## Description
 
-This is a simple Next.js Training. I used API of "https://reqres.in/" for fetching users.
+This is a simple Next.js Training. I used the API of "https://reqres.in/" for fetching users.
 
-Then i got them with getStaticProps and serverside. Pages are pre-generated.
+Then I got them with getStaticProps and serverside. Pages are pre-generated.
 
-So thanks to the Dear Next.js, Project is Super Fast :)
+So thanks to Dear Next.js, Project is Super Fast :)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
