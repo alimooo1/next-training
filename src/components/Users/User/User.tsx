@@ -1,5 +1,14 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import styles from "./User.module.scss";
+
+interface Props {
+  firstName: string,
+  lastName: string,
+  email: string,
+  avatar: string,
+  clickHandler: MouseEventHandler<HTMLButtonElement>,
+  single: any
+}
 
 export default function User({
   firstName,
@@ -8,7 +17,9 @@ export default function User({
   avatar,
   clickHandler,
   single,
-}) {
+}: Props) {
+  console.log(single);
+  
   return (
     <div className={`${styles.Card} ${single ? styles.single : ""}`}>
       <img src={avatar} alt="" />
