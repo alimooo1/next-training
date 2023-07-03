@@ -7,10 +7,14 @@ export const metadata = {
 
 const font = Dosis({ subsets: ["latin"], weight: ["300", "400", "700"] });
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en" className={font.className}>
       <body>{children}</body>
     </html>
-  );
+  )
 }
