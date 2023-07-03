@@ -1,3 +1,5 @@
+"use client";
+
 import Head from "next/head";
 import React, { useState, useEffect } from "react";
 import User from "../User/User";

@@ -1,5 +1,7 @@
+"use client"
+
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import User from "./User/User";
 import styles from "./Users.module.scss";
 import Head from "next/head";
