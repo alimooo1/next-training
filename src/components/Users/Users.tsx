@@ -5,17 +5,18 @@ import { useRouter } from "next/navigation";
 import User from "./User/User";
 import styles from "./Users.module.scss";
 import Head from "next/head";
+import UserInterface from "../../interfaces/User"
 
-export default function Users({ fetchedData }) {
+export default function Users({ fetchedData } : { fetchedData: UserInterface[] }) {
   const [users, setUsers] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const router = useRouter();
 
-  const clickHandler = (ID) => {
+  const clickHandler = (ID : number) => {
     router.push(`/${ID}`);
   };
 
-  function getData(data) {
+  function getData(data: UserInterface[]) {
     let users = data.map((item) => {
       return (
         <User
@@ -25,6 +26,7 @@ export default function Users({ fetchedData }) {
           avatar={item.avatar}
           key={item.id}
           clickHandler={() => clickHandler(item.id)}
+          single={null}
         />
       );
     });

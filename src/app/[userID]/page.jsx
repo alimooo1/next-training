@@ -1,4 +1,4 @@
-import SingleUser from "@/components/Users/SingleUser/SingleUser";
+import SingleUser from "../../components/Users/SingleUser/SingleUser";
 
 export async function generateMetadata({ params }) {
   const id = params.userID;
