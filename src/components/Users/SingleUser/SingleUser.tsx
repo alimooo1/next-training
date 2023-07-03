@@ -4,9 +4,10 @@ import Head from "next/head";
 import React, { useState, useEffect } from "react";
 import User from "../User/User";
 import styles from "./singleUser.module.scss";
+import UserInterface from "../../../interfaces/User"
 
-export default function SingleUser({ fetchedData }) {
-  const [user, setUser] = useState({});
+export default function SingleUser({ fetchedData } : { fetchedData: UserInterface}) {
+  const [user, setUser] = useState<UserInterface>({} as UserInterface);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -27,6 +28,7 @@ export default function SingleUser({ fetchedData }) {
           lastName={user.last_name}
           email={user.email}
           avatar={user.avatar}
+          clickHandler={null}
           single
         />
       ) : (
