@@ -1,7 +1,6 @@
 import SingleUser from "../../components/Users/SingleUser/SingleUser";
 
-export async function generateMetadata({ params }) {
-  const id = params.userID;
+export async function generateMetadata({ params } : { params: {userID: number}}) {
   const data = await fetch(`https://reqres.in/api/users/${params.userID}`);
   const result = await data.json();
 
@@ -21,14 +20,14 @@ export async function generateStaticParams() {
   ];
 }
 
-async function getStaticProps(params) {
-  const data = await fetch(`https://reqres.in/api/users/${params.userID}`);
+async function getStaticProps(ID : string) {  
+  const data = await fetch(`https://reqres.in/api/users/${ID}`);
   const result = await data.json();
   return result.data;
 }
 
-async function singleUser({ params }) {
-  const userData = await getStaticProps(params);
+async function singleUser({ params } : { params: { userID: string} }) {  
+  const userData = await getStaticProps(params.userID);
 
   return (
     <>
